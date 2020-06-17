@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Cooking eBook</string>
+    <string name="title">Name Cooking</string>
+    <string name="image">Images</string>
+    <string name="high_res_picture">High-Res Picture</string>
+    <string-array name="nameCooking">
+        <item>Swedish Cinnamon Buns (Kanelbullar)</item>
+        <item>Baked Eggplant Parmesan</item>
+        <item>Italian Sausage And Orzo Soup</item>
+        <item>Spaghetti and Zucchini Noodles with Basil-Walnut Pesto</item>
+        <item>Spiralized Zucchini Nest Eggs</item>
+        <item>Baked Spiralized Butternut Squash Fries</item>
+        <item>Skinny Chicken Parmesan Pasta Bake</item>
+        <item>Mediterranean Chicken Pasta Bake</item>
+        <item>Slow-Cooker Lasagna</item>
+        <item>Seafood Paella</item>
+        <item>Squash and Cucumber Marinated Salad</item>
+    </string-array>
+    <string-array name="urlCooking">
+        <item>https://www.gimmesomeoven.com/swedish-cinnamon-buns-kanelbullar</item>
+        <item>https://www.gimmesomeoven.com/baked-eggplant-parmesan-recipe/</item>
+        <item>https://www.gimmesomeoven.com/italian-sausage-and-orzo-soup/</item>
+        <item>http://www.eatingwell.com/recipe/279102/spaghetti-zucchini-noodles-with-basil-walnut-pesto/</item>
+        <item>http://www.eatingwell.com/recipe/274364/spiralized-zucchini-nest-eggs/</item>
+        <item>http://www.eatingwell.com/recipe/275725/baked-spiralized-butternut-squash-fries/</item>
+        <item>https://www.bettycrocker.com/recipes/skinny-chicken-parmesan-pasta-bake/22b81a04-5bfe-415f-8c1b-1a1b55919d5c</item>
+        <item>https://www.bettycrocker.com/recipes/mediterranean-chicken-pasta-bake/d9ef9ef2-6369-462b-b753-965793af808b</item>
+        <item>https://www.bettycrocker.com/recipes/slow-cooker-lasagna/23546794-7262-47be-9ca4-e12c900399a1</item>
+        <item>https://www.cookingchanneltv.com/recipes/tia-mowry/seafood-paella-3589723</item>
+        <item>https://www.cookingchanneltv.com/recipes/squash-and-cucumber-marinated-salad-2302301</item>
+    </string-array>
+</resources>

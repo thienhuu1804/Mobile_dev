@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:hint="Phone number" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Welcome to"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_alignEnd="@+id/imageButton"
+        android:layout_alignRight="@+id/imageButton"
+        android:text="Food Ordering"
+        android:textColor="#ff87ff09"
+        android:textSize="30dp" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="19dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <EditText
+        android:id="@+id/editTextNameFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Please enter food name" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:text="Size"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textSize="20dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dropDownWidth="wrap_content"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fillings"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textSize="20dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxRice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rice" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCheese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cheese" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fish" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBeef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Beef" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drinks" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/radioGroupDrink">
+
+        <RadioButton
+            android:id="@+id/radioButtonCoca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coca" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSprite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sprite" />
+
+        <RadioButton
+            android:id="@+id/radioButton7up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7up" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignEnd="@+id/imageButton"
+        android:layout_alignRight="@+id/imageButton"
+        android:hint="Enter SMS"
+        android:text="Text here"
+        android:textColorHint="@color/abc_primary_text_material_dark" />
+
+    <Button
+        android:id="@+id/btnSendSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Send "
+        android:textAlignment="viewEnd" />
+
+</LinearLayout>

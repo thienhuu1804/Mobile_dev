@@ -1,0 +1,2 @@
+rootProject.name='Exchange_Rate'
+include ':app'

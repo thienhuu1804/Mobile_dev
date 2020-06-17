@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Landmarks</string>
+    <string name="Title">Visiting Cleveland Landmarks</string>
+    <string name="mapIt">Map It</string>
+    <string name="moreInfo">More Info</string>
+    <string name="back">Back</string>
+</resources>
