@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -44,12 +46,30 @@ public class MainActivity extends AppCompatActivity {
     private Currency pre = new Currency(), after = new Currency();
     NumberFormat formatCurrency = NumberFormat.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initView();
+
+        inputText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                convert();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         //tạo danh sách
         new Thread(new Runnable() {
@@ -286,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
-    public void convert(View view){
+    public void convert(){
         //lấy số tiền nhập vào
         String input =inputText.getText().toString();
         if (input.length() == 0){
@@ -294,15 +314,18 @@ public class MainActivity extends AppCompatActivity {
         }
         // String history = historyText.getText().toString();
         double outputValue;
-        double inputValue = Double.valueOf(input).doubleValue();
-
-        //lấy tỉ giá chuyển đổi
-
-
+        // Neu la chu thi khong chuyen thanh so dc, huy keo
+        try{
+        double inputValue = Double.parseDouble(input);
         //tính toán kq
         outputValue = (double) ((inputValue)*exchangeRate);
 
         outputText.setText(String.valueOf(formatCurrency.format(inputValue)) +" "+ pre.getCode()+" = "+String.valueOf(formatCurrency.format(outputValue))+" "+after.getCode()+"\n" );
+
+        }catch (NumberFormatException e){
+            return;
+        }
+
     }
 
     public void onSaveInstanceState(Bundle outState) {
