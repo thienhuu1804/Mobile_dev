@@ -12,6 +12,7 @@ import com.squareup.picasso.RequestCreator;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,17 +21,25 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.logging.LogRecord;
 
 public class CountryDetails extends AppCompatActivity {
 
     ProgressDialog progressDialog;
     CountrySimpleData country;
     ImageView img;
+    Handler handler;
+    Timer t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_details);
+
+        handler = new Handler();
+        t = new Timer();
 
         country = getIntent().getParcelableExtra("selectedCountry");
 
@@ -75,11 +84,22 @@ public class CountryDetails extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            if(progressDialog.isShowing()){
-                progressDialog.dismiss();
-            }
-            req.into(img);
+
+            t.schedule(new TimerTask() {
+                public void run() {
+                    handler.post(new Runnable() {
+                        public void run() {
+                            if(progressDialog.isShowing()){
+                                progressDialog.dismiss();
+                            }
+                            req.into(img);
+                        }
+                    });
+                }
+            }, 2000);
+
             Toast.makeText(getApplicationContext(), "set flag: done !", Toast.LENGTH_LONG).show();
         }
     }
+
 }
