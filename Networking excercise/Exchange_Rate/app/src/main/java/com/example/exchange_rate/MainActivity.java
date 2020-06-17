@@ -316,13 +316,18 @@ public class MainActivity extends AppCompatActivity {
         double outputValue;
         // Neu la chu thi khong chuyen thanh so dc, huy keo
         try{
-        double inputValue = Double.parseDouble(input);
-        //tính toán kq
-        outputValue = (double) ((inputValue)*exchangeRate);
+            double inputValue = Double.parseDouble(input);
+            //tính toán kq
+            if(inputValue < 0 ){
+                outputText.setText("Invalid value !");
+                return;
+            }
+            outputValue = (double) ((inputValue)*exchangeRate);
 
-        outputText.setText(String.valueOf(formatCurrency.format(inputValue)) +" "+ pre.getCode()+" = "+String.valueOf(formatCurrency.format(outputValue))+" "+after.getCode()+"\n" );
+            outputText.setText(String.valueOf(formatCurrency.format(inputValue)) +" "+ pre.getCode()+" = "+String.valueOf(formatCurrency.format(outputValue))+" "+after.getCode()+"\n" );
 
         }catch (NumberFormatException e){
+            outputText.setText("Invalid value !");
             return;
         }
 
