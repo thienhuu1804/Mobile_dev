@@ -35,12 +35,14 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView outputText;
+    private TextView outputText, historyText;
     private EditText inputText;
     private Spinner spinnerListPre, spinnerListAfter;
+    private Button recordButton;
 
     private ArrayList<Currency> listCurrency = new ArrayList<>(); //danh sách tiền tệ
     private ArrayList<String> listNation = new ArrayList<>();
+    private ArrayList<String> listHistory = new ArrayList<>();
     private boolean isRunFisrt = true;
     private double exchangeRate = 1;
     private Currency pre = new Currency(), after = new Currency();
@@ -53,6 +55,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initView();
+
+        recordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!outputText.getText().toString().equals("Invalid value !") && outputText.getText().toString().trim().length() > 0){
+                    listHistory.add(0,outputText.getText().toString());
+                    String resultList = "";
+                    for (int i=0; i<listHistory.size(); i++)
+                        resultList+= listHistory.get(i)+"\n";
+                    historyText.setText(resultList);
+                }
+            }
+        });
+
+        historyText.setMovementMethod(new ScrollingMovementMethod());
 
         inputText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -86,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView(){ //ánh xạ các phần tử của giao diện
+        recordButton = (Button) findViewById(R.id.record);
+        historyText = (TextView) findViewById(R.id.history) ;
         inputText = (EditText) findViewById(R.id.inputText);
         outputText = (TextView) findViewById(R.id.outputText);
         spinnerListAfter = findViewById(R.id.spinnerListAfter);
